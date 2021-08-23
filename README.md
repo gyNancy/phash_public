@@ -1,2 +1,2 @@
 # phash_public
-phash attacks for CCS21 
+It's Not What It Looks Like: Manipulating Perceptual Hashing based Applications
