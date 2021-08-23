@@ -8,8 +8,14 @@ It's Not What It Looks Like: Manipulating Perceptual Hashing based Applications
 
 3. Example
 3.1 Basic Attack
+```bash
+Greyscale attack: 
+python3 test_attack_black.py --untargeted -a black -d imagenet --reset_adam -n 50 --solver adam -b 2 -p 1 --hash 10 --use_resize --method "tanh" --batch 256 --gpu 0 --lr 0.01 -s "black_results_imagenet" --start_idx=0 --dist_metrics "pdist" --save_ckpts "best_modifier_imagenet"
 
+RGB attack:
+python3 test_attack_black_rgb.py --untargeted -a black -d imagenet --reset_adam -n 50 --solver adam -b 2 -p 1 --hash 10 --use_resize --method "tanh" --batch 256 --gpu 2 --lr 0.01 -s "black_results_imagenet_rgb" --start_idx=0 --dist_metrics "pdist" --save_ckpts "best_modifier_imagenet"
+```
 3.2 Advanced Attack
-3.2.1 Attack over Input Ensemble (AoE) 
+    3.2.1 Attack over Input Ensemble (AoE) 
 
-3.2.3 Attack over Input Transformation (AoT)
+    3.2.3 Attack over Input Transformation (AoT)
