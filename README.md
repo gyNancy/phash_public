@@ -5,7 +5,9 @@ Further details can be found in our paper "It's Not What It Looks Like: Manipula
 
 
 1. Installation
-Python 3.6.8 and Tensorflow 1.14.0 are used. Other tensorflow versions >=1.13.0 should work but our repo is not compatible with Tensorflow >=2.0. The full environment file could be found in requirement.txt for reference. 
+
+Python 3.6.8 and Tensorflow 1.14.0 are used. Other tensorflow versions >=1.13.0 should work but our repo is not compatible with Tensorflow >=2.0. The full environment file could be found in requirement.txt for your reference. 
+
 2. Usage
 
 3. Example
