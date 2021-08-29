@@ -320,13 +320,13 @@ def main(args):
                     pdistance_total += distance1[0]
                     total_success_iterations += first_iteration
                     total_iterations += first_iteration
-                    suffix = "id{}_differ{}_{}_l2normalized{:.2f}_pdistance{}".format(all_true_ids[i], hash_differences, success, l2_distortion_normalized, distance1_normalized)
+                    suffix = "id{}_differ{}_{}_l2{:.2f}_pdistance{}".format(all_true_ids[i], hash_differences, success, l2_distortion_direct, distance1[0])
                     print("Saving to", suffix)
     
                     show(gray_inputs, "{}/{}/{}_original_{}.png".format(args['save'], args['dataset'], img_no,suffix))
                     show(adv, "{}/{}/{}_adversarial_{}.png".format(args['save'], args['dataset'], img_no, suffix))
-                    # show(adv - inputs, "{}/{}/{}_diff_{}.png".format(args['save'], args['dataset'], img_no, suffix))
-            
+                    
+                    # for name saving purposes, 2nd calculation done
                     print("[STATS][L1] total = {}, id = {}, time = {:.3f}, success = {}, const = {:.6f}, hash_avg={:.5f}, distortion = {:.5f}, success_rate = {:.3f}, l2_avg={:.5f}, p_avg={}, iteration_avg={}"
                     .format(img_no, all_true_ids[i], timeend - timestart, success, const, 0 if total_success == 0 else hash_total / total_success, l2_distortion_direct, total_success / float(img_no), 0 if total_success == 0 else l2_total / total_success, 0 if total_success == 0 else pdistance1_total/ total_success
                     , 0 if total_success == 0 else total_success_iterations/ total_success))
@@ -349,7 +349,8 @@ def main(args):
                 l2_total2 += l2_distortion_current
                 pdistance_total +=  distance2[0]
                 print("Failed attacks!")
-                suffix_current = "l2_{:.2f}_pdist{}_diff{}_success={}_time{}".format(l2_distortion_current_normalized, distance2_normalized, hash_differences_current, success, timeend - timestart)
+                # for name saving purposes, 2nd calculation done
+                suffix_current = "l2_{:.2f}_pdist{}_diff{}_success={}_time{}".format(l2_distortion_current, distance2[0], hash_differences_current, success, timeend - timestart)
                 show(adv_current, "{}/{}/id{}_adv_current_{}.png".format(args['save'], args['dataset'], i, suffix_current))
                 print('saving for failed attack current', suffix_current)
                 sys.stdout.flush()

@@ -328,17 +328,14 @@ def main(args):
                     pdistance_total += distance1[0]
                     total_success_iterations += first_iteration
                     total_iterations += first_iteration
-                    suffix = "id{}_differ{}_{}_l2normalized{:.2f}_pdistance{}".format(all_true_ids[i], hash_differences, success, l2_distortion_direct, distance1[0])
+                    suffix = "id{}_differ{}_{}_l2{:.2f}_pdistance{}".format(all_true_ids[i], hash_differences, success, l2_distortion_direct, distance1[0])
                     print("Saving to", suffix)
-    
+                    # for name saving purposes, 2nd calculation done
                     show(inputs, "{}/{}/{}_original_{}.png".format(args['save'], args['dataset'], img_no,suffix))
                     show(adv, "{}/{}/{}_adversarial_{}.png".format(args['save'], args['dataset'], img_no, suffix))
-                    # show(adv - inputs, "{}/{}/{}_diff_{}.png".format(args['save'], args['dataset'], img_no, suffix))
-            
-                    # print("[STATS][L1] total = {}, id = {}, time = {:.3f}, success = {}, const = {:.6f}, hash_avg={:.5f}, distortion = {:.5f}, success_rate = {:.3f}, l2_normalized_avg={:.5f}, p_normalized_avg={}"
-                    # .format(img_no, all_true_ids[i], timeend - timestart, success, const, 0 if total_success == 0 else hash_total / total_success, l2_distortion_normalized, total_success / float(img_no), 0 if total_success == 0 else l2_normalized_total / total_success, 0 if total_success == 0 else distance1_normalized_total/ total_success))
+
                     print("[STATS][L1] total = {}, id = {}, time = {:.3f}, success = {}, const = {:.6f}, hash_avg={:.5f}, distortion = {:.5f}, success_rate = {:.3f}, l2_avg={:.5f}, p_avg={}, iteration_avg={}"
-                    .format(img_no, all_true_ids[i], timeend - timestart, success, const, 0 if total_success == 0 else hash_total / total_success, l2_distortion_normalized, total_success / float(img_no), 0 if total_success == 0 else l2_total / total_success, 0 if total_success == 0 else pdistance1_total/ total_success
+                    .format(img_no, all_true_ids[i], timeend - timestart, success, const, 0 if total_success == 0 else hash_total / total_success, l2_distortion_direct, total_success / float(img_no), 0 if total_success == 0 else l2_total / total_success, 0 if total_success == 0 else pdistance1_total/ total_success
                     , 0 if total_success == 0 else total_success_iterations/ total_success))                    
                     
                     sys.stdout.flush()
@@ -362,7 +359,8 @@ def main(args):
                 l2_total2 += l2_distortion_current
                 pdistance_total +=  distance2[0]
                 print("Failed attacks!")
-                suffix_current = "l2{:.2f}_pdist{}_diff{}_success={}_time{}".format(l2_distortion_current_normalized, distance2[0], hash_differences_current, success, timeend - timestart)
+                # for name saving purposes, 2nd calculation done
+                suffix_current = "l2{:.2f}_pdist{}_diff{}_success={}_time{}".format(l2_distortion_current, distance2[0], hash_differences_current, success, timeend - timestart)
                 show(adv_current, "{}/{}/id{}_adv_current_{}.png".format(args['save'], args['dataset'], i, suffix_current))
                 print('saving for failed attack current', suffix_current)
                 sys.stdout.flush()
@@ -462,7 +460,7 @@ if __name__ == "__main__":
     #     else:
     #         args['init_const'] = 0.5
     # setup random seed
-    args['load_ckpt'] = './{}/best_modifier_img6.npy'.format(args['save_ckpts'])
+    args['load_ckpt'] = './{}/best_modifier_img0.npy'.format(args['save_ckpts'])
     random.seed(args['seed'])
     np.random.seed(args['seed'])
     print(args)

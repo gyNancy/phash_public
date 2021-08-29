@@ -496,7 +496,7 @@ def main(args):
                     pdistance_total += distance1[0]
                     total_success_iterations += first_iteration
                     total_iterations += first_iteration
-                    suffix = "id{}_differ{}_{}_l2normalized{:.2f}_pdistance{}".format(all_true_ids[i], hash_differences, success, l2_distortion_normalized, distance1_normalized)
+                    suffix = "id{}_differ{}_{}_l2{:.2f}_pdistance{}".format(all_true_ids[i], hash_differences, success, l2_distortion_direct, distance1[0])
                     print("Saving to", suffix)
     
                     show(gray_inputs, "{}/{}/{}_original_{}.png".format(args['save'], args['dataset'], img_no,suffix))
@@ -525,7 +525,7 @@ def main(args):
                 l2_total2 += l2_distortion_current
                 pdistance_total +=  distance2[0]
                 print("Failed attacks!")
-                suffix_current = "l2_{:.2f}_pdist{}_diff{}_success={}_time{}".format(l2_distortion_current_normalized, distance2_normalized, hash_differences_current, success, timeend - timestart)
+                suffix_current = "l2_{:.2f}_pdist{}_diff{}_success={}_time{}".format(l2_distortion_current, distance2[0], hash_differences_current, success, timeend - timestart)
                 show(adv_current, "{}/{}/id{}_adv_current_{}.png".format(args['save'], args['dataset'], i, suffix_current))
                 print('saving for failed attack current', suffix_current)
                 sys.stdout.flush()
