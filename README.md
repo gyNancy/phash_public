@@ -1,6 +1,4 @@
-# phash_public
-It's Not What It Looks Like: Manipulating Perceptual Hashing based Applications
-
+# It's Not What It Looks Like: Manipulating Perceptual Hashing based Applications
 
 1. Installation
 
