@@ -1,7 +1,11 @@
 # It's Not What It Looks Like: Manipulating Perceptual Hashing based Applications
+The repository contains the dataset and major code used for attacking perceptual hashing based image search. Our attacks focus on subverting standard perceptual hashing algorithms referred from https://github.com/JohannesBuchner/imagehash and could also be used to attack the more robust Blockhash https://github.com/commonsmachinery/blockhash-python. 
+
+Further details can be found in our paper "It's Not What It Looks Like: Manipulating Perceptual Hashing based Applications" by Qingying Hao, Licheng Luo, Steve T.K. Jan, Gang Wang (CCS 2021). (https://qingyinghao.web.illinois.edu/files/ccs21_pHash_preprint.pdf)
+
 
 1. Installation
-
+Python 3.6.8 and Tensorflow 1.14.0 are used. Other tensorflow versions >=1.13.0 should work but our repo is not compatible with Tensorflow >=2.0. The full environment file could be found in requirement.txt for reference. 
 2. Usage
 
 3. Example
