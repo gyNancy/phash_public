@@ -11,9 +11,10 @@ Further details can be found in our paper "It's Not What It Looks Like: Manipula
 Python 3.6.8 and Tensorflow 1.14.0 are used. Other tensorflow versions >=1.13.0 should work but our code is not compatible with Tensorflow >=2.0. The full environment file could be found in requirement.txt as a reference. 
 
 ## 2. Examples
-You could define a number of command line arugments to run different attacks for different datasets. You could refer to test_attack_black.py for more information. We give examples to run basic and advanced pHash attacks for selected ImageNet dataset. 
+You could define a number of command line arugments to run different attacks for different datasets. You could refer to test_attack_black.py for more information. We give examples to run basic and advanced pHash attacks for selected ImageNet dataset. The other datasets we use are in Face_results and IMD_results. 
+
 2.1 Basic Attack
-The basic attack has been split into grayscale initialization and RGB attack pipelines to improve the attack efficiency. In the following example, we aim at generating attacks images that differ 10 bits (out of 64 bits hash) with the original images for phash attacks. 
+The basic attack has been split into grayscale initialization and RGB attack pipelines to improve the attack efficiency. In the following example, we aim at generating attacks images that differ 10 bits (out of 64 bits hash) with the original images for phash attacks. You could also look at the test.sh file in ImageNet_results folder. 
 ```bash
 Grayscale attack: 
 python3 test_attack_black.py --untargeted -a black -d imagenet --reset_adam -n 50 --solver adam -b 2 -p 1 --hash 10 --use_resize --method "tanh" --batch 256 --gpu 0 --lr 0.01 -s "black_results_imagenet" --start_idx=0 --dist_metrics "pdist" --save_ckpts "best_modifier_imagenet"
