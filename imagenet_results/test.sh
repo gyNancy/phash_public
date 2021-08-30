@@ -1,1 +1,0 @@
-python3 ../test_attack_black.py --untargeted -a black -d imagenet --reset_adam -n 1 --solver adam -b 2 -p 1 --hash 10 --use_resize --method "tanh" --batch 256 --gpu 0 --lr 0.01 -s "black_results_imagenet" --start_idx=0 --dist_metrics "pdist" --save_ckpts "best_modifier_imagenet"
