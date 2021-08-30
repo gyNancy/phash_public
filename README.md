@@ -34,3 +34,15 @@ This example creates the attack image based on the central cropped original imag
 ```bash
 python3 test_attack_black_aot.py --untargeted -a black -d imagenet --reset_adam -n 50 --solver adam -b 2 -p 1 --hash 10 --use_resize --method "tanh" --batch 512 --gpu 1 --lr 0.01 -s "black_results_imagenet_aot" --start_idx=0 --dist_metrics "pdist" --save_ckpts "best_modifier_imagenet_aot" --transform "crop"
 ```
+
+## 3. Citation
+If you find this repo useful for your research, please use the following.
+```
+@inproceedings{hao2021phash,
+    title = {It's Not What It Looks Like: Manipulating Perceptual Hashing based Applications},
+    author = {Qingying Hao, Licheng Luo, Steve T.K. Jan, Gang Wang},
+    booktitle = {Proc. of CCS},
+    year = {2021}
+}
+```
+If you have any questions, please contact Qingying Hao (qhao2@illinois.edu). 
