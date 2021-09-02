@@ -26,6 +26,7 @@ python3 test_attack_black_rgb.py --untargeted -a black -d imagenet --reset_adam 
 2.2 Advanced Attack
 
 In order to improve the robustness of our basic attacks, we introduce different techniques for advanced attacks. AoE attacks generates the attack image that differs x hash bits (e.g., 10 bits) with not only the original images but also slightly transformed original images(s). You could also define your own choices of slightly modified originial images. AoT attacks generate the attack image based on the slightly transformed image. 
+
 2.2.1 Attack over Input Ensemble (AoE) 
 
 This example uses three versions of transformed original images, including images that have been central cropped, rotated and Disproportionate scaled.  
