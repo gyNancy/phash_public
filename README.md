@@ -38,11 +38,11 @@ python3 test_attack_black_aot.py --untargeted -a black -d imagenet --reset_adam 
 ## 3. Citation
 If you find this repo useful for your research, please use the following.
 ```
-@inproceedings{hao2021phash,
-    title = {It's Not What It Looks Like: Manipulating Perceptual Hashing based Applications},
-    author = {Qingying Hao, Licheng Luo, Steve T.K. Jan, Gang Wang},
-    booktitle = {Proc. of CCS},
-    year = {2021}
+@inproceedings {hao-ccs21,
+author = {Qingying Hao and Licheng Luo and Steve TK Jan and Gang Wang},
+title = {It's Not What It Looks Like: Manipulating Perceptual Hashing based Applications},
+booktitle = {Proceedings of The ACM Conference on Computer and Communications Security (CCS)},
+year = {2021},
 }
 ```
 If you have any questions, please contact Qingying Hao (qhao2@illinois.edu). 
