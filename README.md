@@ -3,7 +3,7 @@ The repository contains the dataset and major code used for attacking perceptual
 is done by generating attack images that effectively enlarge the hash
 distance to the original image while introducing minimal visual changes under the black-box setting. Visual distances could be l2 distances or any perceptual distances (i.e., https://github.com/richzhang/PerceptualSimilarity/) as we used in our attacks. Our attacks focus on subverting standard pHash algorithms referred from https://github.com/JohannesBuchner/imagehash and could also be used to attack the more robust Blockhash algorithms https://github.com/commonsmachinery/blockhash-python. 
 
-Further details can be found in our paper "It's Not What It Looks Like: Manipulating Perceptual Hashing based Applications" by Qingying Hao, Licheng Luo, Steve T.K. Jan, Gang Wang (CCS 2021). (https://qingyinghao.web.illinois.edu/files/ccs21_pHash_preprint.pdf)
+Further details can be found in our paper "It's Not What It Looks Like: Manipulating Perceptual Hashing based Applications" by Qingying Hao, Licheng Luo, Steve T.K. Jan, Gang Wang (CCS 2021). (https://qingyinghao.web.illinois.edu/files/CCS-PHashing.pdf)
 
 
 ## 1. Installation
